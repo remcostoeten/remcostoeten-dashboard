@@ -45,7 +45,7 @@ body {
 
   &::after {
     content: "";
-    width: 90vw;
+    width: 222vw;
     height: 145%;
     background: linear-gradient(
       190deg,
@@ -54,8 +54,9 @@ body {
     );
     position: absolute;
     bottom: 0;
-    transform: rotate(45deg);
+    transform: rotate(356deg);
     z-index: -1;
+    left: -320px;
   }
 
   &::before {
