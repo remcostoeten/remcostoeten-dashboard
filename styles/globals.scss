@@ -1,9 +1,30 @@
 @import "./utils/theme";
 @import "./components/loader.scss";
-
+@import "./components/background.scss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#blob {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 1200px;
+    background: linear-gradient(
+      190deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(3, 7, 17) 100%
+    );
+    filter: ;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
 
 @layer base {
   :root {

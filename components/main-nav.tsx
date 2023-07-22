@@ -38,6 +38,7 @@ export function MainNav({ items, children }: MainNavProps) {
           {items?.map((item, index) => (
             <Link
               showhand="true"
+              hidecircel="true"
               key={index}
               href={item.disabled ? "#" : item.href}
               className={cn(

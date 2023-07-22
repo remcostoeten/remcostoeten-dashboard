@@ -44,18 +44,28 @@ export default async function IndexPage() {
             href={siteConfig.links.github}
             className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
             target="_blank"
+            hidecircel="true"
+            showhand="true"
           >
             Follow along on Github
           </Link>
-          <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1
+            className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
+            cursorincreasesize="true"
+          >
             Showcasing various UI's and features i've built.
           </h1>
-          <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+          <p className="mmax-w-[48rem] w-full leading-normal text-muted-foreground sm:text-xl sm:leading-8">
             I&apos;m a <span className="dutch">dutch</span> front-end developer
             with a graphic design degree. Passionate about building beautifull
             applications. And lately features which help me be more productive.
+            <div
+              className="   absolute h-[20vh] w-[50vw] "
+              hidecircel="true"
+              showhand="true"
+            ></div>
           </p>
-          <div className="space-x-4">
+          <div className="z-10 space-x-4">
             <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
               Go to Dashboard
             </Link>
@@ -75,7 +85,10 @@ export default async function IndexPage() {
         className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-          <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+          <h2
+            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
+            hidecursor="true"
+          >
             Features
           </h2>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">

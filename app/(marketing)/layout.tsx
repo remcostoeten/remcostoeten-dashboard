@@ -1,10 +1,10 @@
 import Link from "next/link"
-
 import { marketingConfig } from "@/config/marketing"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { MainNav } from "@/components/main-nav"
 import { SiteFooter } from "@/components/site-footer"
+import { CursorProvider } from "@/lib/CursorContext"
 
 interface MarketingLayoutProps {
   children: React.ReactNode
@@ -25,6 +25,7 @@ export default async function MarketingLayout({
                 buttonVariants({ variant: "secondary", size: "sm" }),
                 "px-4"
               )}
+              showhand="true"
             >
               Login
             </Link>

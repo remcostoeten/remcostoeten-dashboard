@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 
 import { useCursor } from "@/lib/CursorContext"
+import { set } from "date-fns"
 
 export default function Cursor() {
   const { cursorSize, setCursorSize } = useCursor()
@@ -42,7 +43,7 @@ export default function Cursor() {
       }
 
       if (e.target.getAttribute("hideCircel") === "true") {
-        setCursorSize("20px")
+        setCursorSize("0")
       }
     }
 
@@ -79,13 +80,18 @@ export default function Cursor() {
         transform: `translate3d(${position.x - (linkHovered ? 0 : 0)}px, ${
           position.y - (linkHovered ? 0 : 0)
         }px, 0)`,
-        width: cursorSize,
-        height: cursorSize,
-        backgroundColor: linkHovered ? "black" : "white",
+        left: linkHovered ? -20 : 0,
+        top: linkHovered ? -20 : 0,
+        width: linkHovered ? 100 : 25,
+        height: linkHovered ? 100 : 25,
+        backgroundColor: showHand ? "transparent" : "white",
         willChange: "transform",
         transitionTimingFunction: "cubic-bezier(.33,.28,0,1.14)",
         zIndex: 10,
+        transition:
+          "width 0.2s cubic-bezier(.33,.28,0,1.14), height 0.2s cubic-bezier(.33,.28,0,1.14), background-color 0.2s cubic-bezier(.33,.28,0,1.14)",
         zIndex: 1000,
+
         borderRadius: "50%",
         mixBlendMode: showHand ? "normal" : "difference",
         pointerEvents: "none",
@@ -94,16 +100,16 @@ export default function Cursor() {
       <div className="cursor-circle-bg">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="45"
-          height="45"
+          width="38"
+          height="38"
           version="1.1"
           viewBox="0 0 356.534 356.534"
           xmlSpace="preserve"
           style={{
-            opacity: showHand ? 1 : 1,
+            opacity: showHand ? 1 : 0,
             transition: "scale 1s cubic-bezier(.33,.98,0,0.84), opacity 0.5s",
-            scale: showHand ? 1 : 1,
-            rotate: showHand ? 45 : -90,
+            scale: showHand ? 1 : 0,
+            rotate: showHand ? 20 : -7,
           }}
         >
           <path
@@ -119,8 +125,3 @@ export default function Cursor() {
     </div>
   )
 }
-
-// style={{
-//   // opacity: showHand ? 1 : 0, // transition: "scale 1s
-//   cubic-bezier(.33,.98,0,0.84), opacity 0.5s", // scale: showHand ? 0.3 : 0,
-//   // rotate: showHand ? 45 : 90, // }}

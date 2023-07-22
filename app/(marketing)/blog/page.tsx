@@ -21,10 +21,12 @@ export default async function BlogPage() {
       <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
         <div className="flex-1 space-y-4">
           <h1 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl">
-            Blog
+            Snippts
           </h1>
           <p className="text-xl text-muted-foreground">
-            A blog built using Contentlayer. Posts are written in MDX.
+            A "blog-like" section with various posts for my personal usage. Just
+            a place for me to store some notes so I don't lose them. E.g.
+            configs, snippets, links.
           </p>
         </div>
       </div>
