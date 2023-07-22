@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { CursorProvider } from "@/lib/CursorContext"
 
 import { env } from "@/env.mjs"
 import { siteConfig } from "@/config/site"

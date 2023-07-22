@@ -1,5 +1,4 @@
 "use client"
-
 import * as React from "react"
 import Link from "next/link"
 import { useSelectedLayoutSegment } from "next/navigation"
@@ -11,6 +10,7 @@ import { Icons } from "@/components/icons"
 import { MobileNav } from "@/components/mobile-nav"
 import Logo from "./icons/Logo"
 import LogoIconOnly from "./icons/LogoIconOnly"
+import { CursorProvider } from "@/lib/CursorContext"
 
 interface MainNavProps {
   items?: MainNavItem[]
@@ -37,6 +37,7 @@ export function MainNav({ items, children }: MainNavProps) {
         <nav className="hidden gap-6 md:flex">
           {items?.map((item, index) => (
             <Link
+              showhand="true"
               key={index}
               href={item.disabled ? "#" : item.href}
               className={cn(
