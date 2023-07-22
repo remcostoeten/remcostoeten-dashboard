@@ -1,16 +1,20 @@
 "use client"
+
 import * as React from "react"
 import Link from "next/link"
 import { useSelectedLayoutSegment } from "next/navigation"
 
 import { MainNavItem } from "types"
 import { siteConfig } from "@/config/site"
+import { CursorProvider } from "@/lib/CursorContext"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { MobileNav } from "@/components/mobile-nav"
+
+import FeatureMenu from "./FeatureMenu"
 import Logo from "./icons/Logo"
 import LogoIconOnly from "./icons/LogoIconOnly"
-import { CursorProvider } from "@/lib/CursorContext"
+import { PresetShare } from "./ui/PresetShare"
 
 interface MainNavProps {
   items?: MainNavItem[]
@@ -52,6 +56,8 @@ export function MainNav({ items, children }: MainNavProps) {
               {item.title}
             </Link>
           ))}
+          <PresetShare />
+          <FeatureMenu />
         </nav>
       ) : null}
       <button

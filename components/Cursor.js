@@ -109,7 +109,7 @@ export default function Cursor() {
             opacity: showHand ? 1 : 0,
             transition: "scale 1s cubic-bezier(.33,.98,0,0.84), opacity 0.5s",
             scale: showHand ? 1 : 0,
-            rotate: showHand ? 20 : -7,
+            rotate: -25,
           }}
         >
           <path
