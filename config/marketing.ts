@@ -11,12 +11,16 @@ export const marketingConfig: MarketingConfig = {
       href: "/pricing",
     },
     {
-      title: "Blog",
+      title: "Snippets",
       href: "/blog",
+    }, 
+    {
+      title: "Expenses",
+      href: "/expenses",
     },
     {
-      title: "Documentation",
-      href: "/docs",
+      title: "URL extractor",
+      href: "/url-extractor",
     }, 
     {
       title: "Documentation",

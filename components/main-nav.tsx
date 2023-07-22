@@ -56,7 +56,6 @@ export function MainNav({ items, children }: MainNavProps) {
               {item.title}
             </Link>
           ))}
-          <PresetShare />
           <FeatureMenu />
         </nav>
       ) : null}
