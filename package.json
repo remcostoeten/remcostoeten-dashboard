@@ -1,11 +1,7 @@
 {
-  "name": "taxonomy",
+  "name": "remcostoeten dashboard",
   "version": "0.2.0",
   "private": true,
-  "author": {
-    "name": "shadcn",
-    "url": "https://twitter.com/shadcn"
-  },
   "scripts": {
     "dev": "concurrently \"contentlayer dev\" \"next dev\"",
     "build": "contentlayer build && next build",

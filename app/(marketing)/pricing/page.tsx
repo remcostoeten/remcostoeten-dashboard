@@ -3,6 +3,7 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
+import { to } from "./../../../.next/server/app/(docs)/docs/[[...slug]]/page"
 
 export const metadata = {
   title: "Pricing",
@@ -54,7 +55,7 @@ export default function PricingPage() {
             </p>
           </div>
           <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
-            Get Started
+            Go to Dashboard
           </Link>
         </div>
       </div>

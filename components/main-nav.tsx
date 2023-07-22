@@ -9,6 +9,8 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { MobileNav } from "@/components/mobile-nav"
+import Logo from "./icons/Logo"
+import LogoIconOnly from "./icons/LogoIconOnly"
 
 interface MainNavProps {
   items?: MainNavItem[]
@@ -22,10 +24,14 @@ export function MainNav({ items, children }: MainNavProps) {
   return (
     <div className="flex gap-6 md:gap-10">
       <Link href="/" className="hidden items-center space-x-2 md:flex">
-        <Icons.logo />
-        <span className="hidden font-bold sm:inline-block">
+        <div className="block md:hidden">
+          <LogoIconOnly />
           {siteConfig.name}
-        </span>
+        </div>
+        <div className="hidden md:block">
+          <Logo />
+        </div>
+        <span className="hidden font-bold sm:inline-block"></span>
       </Link>
       {items?.length ? (
         <nav className="hidden gap-6 md:flex">

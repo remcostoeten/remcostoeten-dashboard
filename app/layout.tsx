@@ -1,7 +1,7 @@
 import { Inter as FontSans } from "next/font/google"
 import localFont from "next/font/local"
 
-import "@/styles/globals.css"
+import "@/styles/globals.scss"
 import { siteConfig } from "@/config/site"
 import { absoluteUrl, cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/toaster"
@@ -14,7 +14,6 @@ const fontSans = FontSans({
   variable: "--font-sans",
 })
 
-// Font files can be colocated inside of `pages`
 const fontHeading = localFont({
   src: "../assets/fonts/CalSans-SemiBold.woff2",
   variable: "--font-heading",
@@ -39,8 +38,8 @@ export const metadata = {
   ],
   authors: [
     {
-      name: "shadcn",
-      url: "https://shadcn.com",
+      name: "remco stoeten",
+      url: "https://remcostoeten.com",
     },
   ],
   creator: "shadcn",
