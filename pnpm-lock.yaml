@@ -163,7 +163,7 @@ dependencies:
     version: 0.92.0(prop-types@15.8.1)(react@18.2.0)
   next:
     specifier: 13.3.2-canary.13
-    version: 13.3.2-canary.13(@babel/core@7.21.4)(@opentelemetry/api@1.1.0)(react-dom@18.2.0)(react@18.2.0)
+    version: 13.3.2-canary.13(@babel/core@7.21.4)(@opentelemetry/api@1.1.0)(react-dom@18.2.0)(react@18.2.0)(sass@1.64.1)
   next-auth:
     specifier: 4.22.1
     version: 4.22.1(next@13.3.2-canary.13)(nodemailer@6.9.1)(react-dom@18.2.0)(react@18.2.0)
@@ -200,6 +200,9 @@ dependencies:
   react-textarea-autosize:
     specifier: ^8.4.1
     version: 8.4.1(@types/react@18.0.15)(react@18.2.0)
+  sass:
+    specifier: ^1.64.1
+    version: 1.64.1
   sharp:
     specifier: ^0.31.3
     version: 0.31.3
@@ -4833,6 +4836,10 @@ packages:
     engines: {node: '>=14.0.0'}
     dev: false
 
+  /immutable@4.3.1:
+    resolution: {integrity: sha512-lj9cnmB/kVS0QHsJnYKD1uo3o39nrbKxszjnqS9Fr6NB7bZzW45U6WSGBPKXDL/CvDKqDNPA4r3DoDQ8GTxo2A==}
+    dev: false
+
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -6049,7 +6056,7 @@ packages:
       '@panva/hkdf': 1.0.4
       cookie: 0.5.0
       jose: 4.14.1
-      next: 13.3.2-canary.13(@babel/core@7.21.4)(@opentelemetry/api@1.1.0)(react-dom@18.2.0)(react@18.2.0)
+      next: 13.3.2-canary.13(@babel/core@7.21.4)(@opentelemetry/api@1.1.0)(react-dom@18.2.0)(react@18.2.0)(sass@1.64.1)
       nodemailer: 6.9.1
       oauth: 0.9.15
       openid-client: 5.4.1
@@ -6069,7 +6076,7 @@ packages:
     dependencies:
       '@contentlayer/core': 0.3.1(esbuild@0.17.18)
       '@contentlayer/utils': 0.3.1
-      next: 13.3.2-canary.13(@babel/core@7.21.4)(@opentelemetry/api@1.1.0)(react-dom@18.2.0)(react@18.2.0)
+      next: 13.3.2-canary.13(@babel/core@7.21.4)(@opentelemetry/api@1.1.0)(react-dom@18.2.0)(react@18.2.0)(sass@1.64.1)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
@@ -6086,12 +6093,12 @@ packages:
       react: '*'
       react-dom: '*'
     dependencies:
-      next: 13.3.2-canary.13(@babel/core@7.21.4)(@opentelemetry/api@1.1.0)(react-dom@18.2.0)(react@18.2.0)
+      next: 13.3.2-canary.13(@babel/core@7.21.4)(@opentelemetry/api@1.1.0)(react-dom@18.2.0)(react@18.2.0)(sass@1.64.1)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /next@13.3.2-canary.13(@babel/core@7.21.4)(@opentelemetry/api@1.1.0)(react-dom@18.2.0)(react@18.2.0):
+  /next@13.3.2-canary.13(@babel/core@7.21.4)(@opentelemetry/api@1.1.0)(react-dom@18.2.0)(react@18.2.0)(sass@1.64.1):
     resolution: {integrity: sha512-bz3TkzSdiY+ABBW0/aqOl0EvQTQapQtkvsPYCR5LGAM0eeQ8V6ZPrH+4RhkHJMN48qNU9MQZQlP7SsKCabGciw==}
     engines: {node: '>=16.8.0'}
     hasBin: true
@@ -6120,6 +6127,7 @@ packages:
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+      sass: 1.64.1
       styled-jsx: 5.1.1(@babel/core@7.21.4)(react@18.2.0)
     optionalDependencies:
       '@next/swc-darwin-arm64': 13.3.2-canary.13
@@ -7121,6 +7129,16 @@ packages:
       get-intrinsic: 1.2.0
       is-regex: 1.1.4
     dev: true
+
+  /sass@1.64.1:
+    resolution: {integrity: sha512-16rRACSOFEE8VN7SCgBu1MpYCyN7urj9At898tyzdXFhC+a+yOX5dXwAR7L8/IdPJ1NB8OYoXmD55DM30B2kEQ==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.3.1
+      source-map-js: 1.0.2
+    dev: false
 
   /satori@0.0.44:
     resolution: {integrity: sha512-WKUxXC2qeyno6J3ucwwLozPL6j1HXOZiN5wIUf7iqAhlx1RUC/6ePIKHi7iPc3Cy6DYuZcJriZXxXkSdo2FQHg==}
