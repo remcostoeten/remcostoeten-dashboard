@@ -18,6 +18,14 @@
     background-position: 50px 50px;
   }
 }
+
+@keyframes bg-scrolling-reverse-two {
+  to {
+    opacity: 1;
+    background-position: 20px -210px;
+  }
+}
+
 @-webkit-keyframes bg-scrolling {
   0% {
     background-position: 50px 50px;
@@ -42,92 +50,6 @@
 body {
   overflow: hidden;
   position: relative;
-}
-.page-wrapper {
-  &::after {
-    content: "";
-    width: 222vw;
-    height: 145%;
-    background: linear-gradient(
-      190deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgb(3, 7, 17) 100%
-    );
-    position: absolute;
-    bottom: 0;
-    transform: rotate(356deg);
-    z-index: -1;
-    left: -320px;
-  }
-  &__inner {
-    &::after {
-      content: "";
-      width: 222vw;
-      height: 145%;
-      background: linear-gradient(
-        190deg,
-        rgb(191 11 11 / 0%) 0%,
-        rgb(3, 7, 17) 100%
-      );
-      position: absolute;
-      bottom: 0;
-      transform: rotate(36deg);
-      z-index: -1;
-      left: -320px;
-    }
-
-    // green
-
-    // data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAABJQTFRFMLJ/9fz6z/Dg////N7WE2PPlI1+DXwAAACNJREFUeJxjYFTCDhQZTIyxAxOGYBwyxqMyozKjMqMyQ1sGAGB//T4IpyOHAAAAAElFTkSuQmCC
-
-    // purple
-    // data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAABJQTFRFlFS++ff86dTy////l1jB7Nv0UEtMTgAAACNJREFUeJxjYFTCDhQZTIyxAxOGYBwyxqMyozKjMqMyQ1sGAGB//T4IpyOHAAAAAElFTkSuQmCC
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAABJQTFRFMLJ/9fz6z/Dg////N7WE2PPlI1+DXwAAACNJREFUeJxjYFTCDhQZTIyxAxOGYBwyxqMyozKjMqMyQ1sGAGB//T4IpyOHAAAAAElFTkSuQmCC")
-        repeat 0 0;
-      -webkit-animation: bg-scrolling-reverse 0.92s infinite;
-      -moz-animation: bg-scrolling-reverse 0.92s infinite;
-      -o-animation: bg-scrolling-reverse 0.92s infinite;
-      animation: bg-scrolling-reverse 0.92s infinite;
-      -webkit-animation-timing-function: linear;
-      -moz-animation-timing-function: linear;
-      -o-animation-timing-function: linear;
-      animation-timing-function: linear;
-      z-index: -1;
-      filter: invert(1);
-    }
-
-    &::after {
-      animation: show 250ms repeat infinite, bg-scrolling-reverse 0.92s infinite;
-      content: "";
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAABJQTFRFlFS++ff86dTy////l1jB7Nv0UEtMTgAAACNJREFUeJxjYFTCDhQZTIyxAxOGYBwyxqMyozKjMqMyQ1sGAGB//T4IpyOHAAAAAElFTkSuQmCC")
-        repeat 0 0;
-      // -webkit-animation: bg-scrolling-reverse 0.92s infinite;
-      // -moz-animation: bg-scrolling-reverse 0.92s infinite;
-      // -o-animation: bg-scrolling-reverse 0.92s infinite;
-      // animation: bg-scrolling-reverse 0.92s infinite;
-      // -webkit-animation-timing-function: linear;
-      // -moz-animation-timing-function: linear;
-      // -o-animation-timing-function: linear;
-      animation-timing-function: linear;
-      mix-blend-mode: color;
-      z-index: -1;
-      filter: invert(1);
-    }
-  }
 }
 
 @keyframes show {
