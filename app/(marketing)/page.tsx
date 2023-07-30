@@ -1,8 +1,8 @@
 import Link from "next/link"
-import { CursorProvider } from "@/lib/CursorContext"
 
 import { env } from "@/env.mjs"
 import { siteConfig } from "@/config/site"
+import { CursorProvider } from "@/lib/CursorContext"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
@@ -59,12 +59,13 @@ export default async function IndexPage() {
             I&apos;m a <span className="dutch">dutch</span> front-end developer
             with a graphic design degree. Passionate about building beautifull
             applications. And lately features which help me be more productive.
-            <div
-              className="   absolute h-[20vh] w-[50vw] "
-              hidecircel="true"
-              showhand="true"
-            ></div>
           </p>
+          <div
+            className="absolute h-[20vh] w-[50vw]"
+            hidecircel="true"
+            showhand="true"
+          ></div>
+
           <div className="z-10 space-x-4">
             <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
               Go to Dashboard

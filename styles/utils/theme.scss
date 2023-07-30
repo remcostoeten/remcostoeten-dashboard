@@ -1,36 +1,5 @@
 .page-wrapper {
-  &::after {
-    content: "";
-    width: 222vw;
-    height: 145%;
-    background: linear-gradient(
-      190deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgb(3, 7, 17) 100%
-    );
-    position: absolute;
-    bottom: 0;
-    transform: rotate(356deg);
-    z-index: -1;
-    left: -320px;
-  }
   &__inner {
-    &::after {
-      content: "";
-      width: 222vw;
-      height: 145%;
-      background: linear-gradient(
-        190deg,
-        rgb(191 11 11 / 0%) 0%,
-        rgb(3, 7, 17) 100%
-      );
-      position: absolute;
-      bottom: 0;
-      transform: rotate(36deg);
-      z-index: -1;
-      left: -320px;
-    }
-
     // green
 
     // data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAABJQTFRFMLJ/9fz6z/Dg////N7WE2PPlI1+DXwAAACNJREFUeJxjYFTCDhQZTIyxAxOGYBwyxqMyozKjMqMyQ1sGAGB//T4IpyOHAAAAAElFTkSuQmCC
@@ -65,19 +34,14 @@
       top: 0;
       right: 0;
       bottom: 0;
-      left: -50%;
       background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAABJQTFRFMLJ/9fz6z/Dg////N7WE2PPlI1+DXwAAACNJREFUeJxjYFTCDhQZTIyxAxOGYBwyxqMyozKjMqMyQ1sGAGB//T4IpyOHAAAAAElFTkSuQmCC")
         repeat 0 0;
-      animation: bg-scrolling-reverse-two 2s infinite; // topToBottom 0.92s infinite;
       -webkit-animation-timing-function: linear;
       -moz-animation-timing-function: linear;
       -o-animation-timing-function: linear;
       animation-timing-function: linear;
       z-index: -1;
-      animation-delay: 5s;
       opacity: 0;
-      transform: rotate(-45deg);
-      transform: translateX(200px);
       filter: invert(1);
     }
   }

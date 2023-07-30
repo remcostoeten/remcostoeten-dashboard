@@ -1,20 +1,61 @@
-import { Metadata } from "next"
-import Link from "next/link"
-
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
-import { Icons } from "@/components/icons"
-import LogoIconOnly from "@/components/icons/LogoIconOnly"
-import { UserAuthForm } from "@/components/user-auth-form"
+'use client'
+import { Metadata } from "next";
+import Link from "next/link";
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { cn } from "@/lib/utils"; 
+import { buttonVariants } from "@/components/ui/button";
+import { Icons } from "@/components/icons";
+import LogoIconOnly from "@/components/icons/LogoIconOnly";
+import { UserAuthForm } from "@/components/user-auth-form";
+import { useState } from "react";
+import { toast } from "@/components/ui/use-toast";
+import { Label } from "@radix-ui/react-label";
+import { Input } from "@/components/ui/input";
+import { signIn } from "next-auth/react";
+import { useSearchParams } from "next/navigation";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Login",
   description: "Login to your account",
-}
+};
 
 export default function LoginPage() {
-  return (
-    <>
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false);
+  const searchParams = useSearchParams();
+
+  async function onSubmit(data: FormData) {
+    setIsLoading(true);
+
+    setIsLoading(false);
+
+    const auth = getAuth();
+
+    const handleClick = async (e) => {
+      e.preventDefault();
+
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        toast({
+          title: "Login successful.",
+          description: "You have successfully signed in.",
+        });
+        console.log(`User ${user.email} logged in.`);
+      } catch (error) {
+        console.error(error);
+        toast({
+          title: "Something went wrong.",
+          description: "Your sign in request failed. Please try again.",
+          variant: "destructive",
+        });
+      }
+    };
+
+    return (
       <div className="container flex h-screen w-screen flex-col items-center justify-center">
         <Link
           href="/"
@@ -37,10 +78,79 @@ export default function LoginPage() {
               Welcome back
             </h1>
             <p className="text-sm text-muted-foreground">
-              Enter your email to sign in to your account
+              Enter your email and password to sign in to your account
             </p>
           </div>
-          <UserAuthForm />
+
+          <form>
+            <div className="grid gap-2">
+              <div className="grid gap-1">
+                <Label className="sr-only" htmlFor="email">
+                  Email
+                </Label>
+                <Input
+                  id="email"
+                  placeholder="name@example.com"
+                  type="email"
+                  autoCapitalize="none"
+                  autoComplete="email"
+                  autoCorrect="off"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                />
+
+                <Label className="sr-only" htmlFor="password">
+                  Password
+                </Label>
+                <Input
+                  id="password"
+                  placeholder="Password"
+                  type="password"
+                  autoCapitalize="none"
+                  autoComplete="current-password"
+                  autoCorrect="off"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                />
+              </div>
+              <button
+                onClick={handleClick}
+                className={cn(buttonVariants())}
+                disabled={isLoading}
+              >
+                {isLoading && (
+                  <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+                )}
+                Sign In with Email
+              </button>
+            </div>
+          </form>
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-background px-2 text-muted-foreground">
+                Or continue with
+              </span>
+            </div>
+          </div>
+          <button
+            type="button"
+            className={cn(buttonVariants({ variant: "outline" }))}
+            onClick={() => {
+              setIsGitHubLoading(true);
+              signIn("github");
+            }}
+            disabled={isLoading || isGitHubLoading}
+          >
+            {isGitHubLoading ? (
+              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+            ) : (
+              <Icons.gitHub className="mr-2 h-4 w-4" />
+            )}{" "}
+            Github
+          </button>
           <p className="px-8 text-center text-sm text-muted-foreground">
             <Link
               href="/register"
@@ -51,6 +161,6 @@ export default function LoginPage() {
           </p>
         </div>
       </div>
-    </>
-  )
+    );
+  }
 }
